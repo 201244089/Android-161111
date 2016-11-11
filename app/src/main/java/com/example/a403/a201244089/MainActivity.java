@@ -60,11 +60,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         calender1=(CalendarView) findViewById(R.id.calendarView);
-        calender1.setOnClickListener(new View.OnClickListener() {
+        calender1.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Toast.makeText(getApplicationContext(),"date;"+year+"-"+(month+1)+"-"+dayOfMonth,
+                        Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 }
